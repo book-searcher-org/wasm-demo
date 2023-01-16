@@ -1,0 +1,20 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist",
+    "index.d.js"
+  ],
+  "scripts": {
+    "wasm": "wasm-pack build ./searcher --target web",
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4",
+    "vite": "^4.0.0",
+    "vite-plugin-wasm-pack": "^0.1.12"
+  }
+}

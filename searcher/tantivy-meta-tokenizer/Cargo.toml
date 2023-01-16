@@ -1,0 +1,11 @@
+[package]
+name = "tantivy-meta-tokenizer"
+version = "0.2.0"
+authors = ["zu1k <i@zu1k.com>"]
+edition = "2018"
+
+[dependencies]
+tantivy = { version = "0.19", default_features = false, features = ["lz4-compression"]}
+jieba-rs = { version = "0.6", features = ["default-dict"] }
+lazy_static = "1.4"
+fast2s = "0.3"

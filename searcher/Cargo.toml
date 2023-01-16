@@ -1,0 +1,29 @@
+[package]
+name = "searcher"
+version = "0.1.0"
+edition = "2018"
+
+[profile.release]
+lto = true
+strip = "debuginfo"
+
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+console_error_panic_hook = "0.1.7"
+js-sys = "0.3"
+serde-wasm-bindgen = "0.4"
+wasm-bindgen = "0.2.83"
+getrandom = { version = "0.2", features = ["js"] }
+async-trait = "0.1"
+serde_bytes = "0.11.8"
+serde = { version = "1.0", default_features = false, features = ["derive", "std"] }
+serde_with = "2.2"
+tantivy = { version = "0.19", default_features = false }
+tantivy-meta-tokenizer = { path = "./tantivy-meta-tokenizer" }
+
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ["-O4", "--enable-bulk-memory", "--enable-mutable-globals"]
